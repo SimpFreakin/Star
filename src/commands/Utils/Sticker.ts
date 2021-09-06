@@ -26,13 +26,42 @@ export default class Command extends BaseCommand {
         if (!buffer) return void M.reply(`You didn't provide any Image/Video to convert`)
         parsedArgs.flags.forEach((flag) => (parsedArgs.joined = parsedArgs.joined.replace(flag, '')))
         const pack = parsedArgs.joined.split('|')
-        const crop:boolean = parsedArgs.flags.includes('--stretch') || parsedArgs.flags.includes('--s')
+        
+        
+        const categories = (() => {
+            const categories = parsedArgs.flags.reduce((categories, flag) => {
+                switch (flag) {
+                    case '--angry':
+                        categories.push('💢')
+                        break
+                    case '--love':
+                        categories.push('💕')
+                        break
+                    case '--sad':
+                        categories.push('😭')
+                        break
+                    case '--happy':
+                        categories.push('😂')
+                        break
+                    case '--greet':
+                        categories.push('👋')
+                        break
+                    case '--celebrate':
+                        categories.push('🎊')
+                        break
+                }
+                return categories
+            }, new Array<Categories>())
+            categories.length = 2
+            if (!categories[0]) categories.push('❤', '🌹')
+            return categories
+        })()
         const sticker = new Sticker(buffer, {
+            categories,
             pack: pack[1] || '✨ Made for you with 💞',
             author: pack[2] || 'Star ✨',
-            crop: crop
+            type: parsedArgs.flags.includes('--crop') || parsedArgs.flags.includes('--c') ? 'crop' : parsedArgs.flags.includes('--stretch') || parsedArgs.flags.includes('--s') ? 'default' : 'full'
         })
-        await sticker.build()
-        await M.reply(await sticker.get(), MessageType.sticker, Mimetype.webp)
+        await M.reply(await sticker.build(), MessageType.sticker, Mimetype.webp)
     }
 }
