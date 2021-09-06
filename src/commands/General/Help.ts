@@ -32,7 +32,7 @@ export default class Command extends BaseCommand {
                     categories[info.config.category].push(info)
                 }
             }
-            let text = `👾 *Hiro's Command List* 👾\n\n`
+            let text = `✨ *Star's Command List* ✨\n\n`
             const keys = Object.keys(categories)
             for (const key of keys)
                 text += `${this.emojis[keys.indexOf(key)]} *${this.client.util.capitalize(key)}*\n❐ \`\`\`${categories[
@@ -41,7 +41,7 @@ export default class Command extends BaseCommand {
                     .map((command) => command.config?.command)
                     .join(', ')}\`\`\`\n\n`
             return void M.reply(
-                await request.buffer('https://i.pinimg.com/originals/b2/90/89/b290899f20be2d555e193ee134fd74ca.jpg'),
+                await request.buffer('https://wallpapercave.com/uwp/uwp1370160.png'),
                 MessageType.image,
                 undefined,
                 undefined,
