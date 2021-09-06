@@ -25,7 +25,7 @@ export default class Command extends BaseCommand {
             undefined,
             undefined,
 
-            `*Nyanpasu ~~*`
+            `*Nico Nico Ni ~*`
         )
     }
 }
