@@ -16,7 +16,7 @@ export default class Command extends BaseCommand {
             category: 'media',
             aliases: ['ly'],
             usage: `${client.config.prefix}yts [term]`,
-            dm: true,
+            dm: false,
             baseXp: 20
         })
     }
