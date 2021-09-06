@@ -10,7 +10,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'loli',
             description: 'Will send you random loli image.',
-            category: 'Weeb',
+            category: 'weeb',
             usage: `${client.config.prefix}loli`
         })
     }
