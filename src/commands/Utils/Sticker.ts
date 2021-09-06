@@ -28,8 +28,8 @@ export default class Command extends BaseCommand {
         const pack = parsedArgs.joined.split('|')
         const crop:boolean = parsedArgs.flags.includes('--stretch') || parsedArgs.flags.includes('--s')
         const sticker = new Sticker(buffer, {
-            pack: pack[1] || '👾 𝐇𝐚𝐧𝐝𝐜𝐫𝐚𝐟𝐭𝐞𝐝 𝐅𝐨𝐫 𝐘𝐨𝐮 ',
-            author: pack[2] || '𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 𝐁𝐨𝐭𝐭𝐨 𝐊𝐚𝐨𝐢 👾',
+            pack: pack[1] || '✨ Made for you with 💞',
+            author: pack[2] || 'Star ✨',
             crop: crop
         })
         await sticker.build()
