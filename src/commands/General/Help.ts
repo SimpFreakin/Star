@@ -42,16 +42,10 @@ export default class Command extends BaseCommand {
                     .join(', ')}\`\`\`\n\n`
            
                 
-                const rnekol = ["waifu"];
-        const rnekolc = rnekol[Math.floor(Math.random() * rnekol.length)];
-        const neko = await axios.get('https://api.waifu.pics/sfw/' + rnekolc)
-
-
-                
-                
-                
-                
-                return void M.reply( return void M.reply(await request.buffer(neko.data.url), MessageType.image, undefined, undefined,
+               return void M.reply( await request.buffer('https://wallpapercave.com/uwp/uwp1370160.png'),
+                MessageType.image,
+                undefined,
+                undefined,
                 
                 `${text} 🗃️ *Note: Use ${this.client.config.prefix}help <command_name> to view the command info*`
             )
