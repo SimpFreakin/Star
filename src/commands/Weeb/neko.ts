@@ -11,7 +11,7 @@ export default class Command extends BaseCommand {
         super(client, handler, {
             command: 'neko',
             description: 'Will provide a random anime Neko images',
-            category: 'Weeb',
+            category: 'weeb',
             usage: `${client.config.prefix}neko`
         })
     }
